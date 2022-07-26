@@ -1,0 +1,39 @@
+docker run \
+  --rm \
+  -u root \
+  -p 8888:8888 \
+  -v jenkins-data:/var/jenkins_home \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -v "$HOME":/home \
+  jenkinsci/blueocean
+
+
+a93dcd0091c4426581c793ab0ef8052e
+
+
+
+ngrok config add-authtoken 2CSdpHto2dRA3mafSuaJTuGGhAi_6jyc73CcVgLXuodo63iv5
+
+
+curl -v -X GET http://localhost:8080/crumbIssuer/api/json --user user:user
+
+curl -X POST http://localhost:8080/job/GithubExample/build --user user:user -H 'Jenkins-Crumb: b43a447ed22e4ec8080f46d8a57c735ec07edf1ccc3e8293cb8997fd4f99ac5d'
+
+
+
+git remote set-url origin https://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@github.com/sannie-hsu/jenkinsTest.git
+
+https://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@github.com:orgSannie/JenkinsTest2.git
+
+
+
+properties([pipelineTriggers([githubPush()])])
+node {
+    git url: 'https://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@github.com/orgSannie/JenkinsTest2.git',
+    branch: 'master'
+}
+
+
+
+https://github.com/orgSannie/JenkinsTest2
+
